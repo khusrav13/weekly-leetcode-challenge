@@ -19,6 +19,8 @@ class Solution:
             total_gain += max(0, prices[i] - prices[i-1])
         return total_gain
 
+# Solved at 5 mins.
+
 
 # Algorithm: This is a Greedy Algorithm.
 # Complexity:
