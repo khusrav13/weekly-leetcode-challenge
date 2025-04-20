@@ -8,20 +8,21 @@ class Solution(object):
         n = len(nums)
         k = k % n
 
-        # Reverse the entire array
-        self.reverse(nums, 0, n - 1)
-
-        # Reverse the first k elements
-        self.reverse(nums, 0, k - 1)
-
-        # Reverse the remaining n-k elements
-        self.reverse(nums, k, n - 1)
-
-    def reverse(self, nums, start, end):
-        """
-        Helper function to reverse a portion of the array in-place.
-        """
-        while start < end:
-            nums[start], nums[end] = nums[end], nums[start]
-            start += 1
-            end -= 1
+        left = 0
+        right = n - 1
+        while left < right:
+            nums[left], nums[right] = nums[right], nums[left]
+            left +=1
+            right -=1
+        left = 0
+        right = k - 1
+        while left < right:
+            nums[left], nums[right] = nums[right], nums[left]
+            left +=1
+            right -=1
+        left = k
+        right = n - 1
+        while left < right:
+            nums[left], nums[right] = nums[right], nums[left]
+            left +=1
+            right -=1
